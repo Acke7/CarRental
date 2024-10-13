@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace CarRental
 {
-    internal class Car : Vehicle
+    public class Car
     {
-        public int PricePerDay { get; set; }
+        public int Id { get; set; }
+        public string Model { get; set; }
+        public string Brand { get; set; }
+        public decimal PricePerDay { get; set; }
         public bool IsAvailable { get; set; }
 
-        public Car(string model, string brand, int year, int pricePerDay, bool isAvailable)
-            : base(model, brand, year)
+        public Car(int id, string model, string brand, decimal pricePerDay)
         {
+            Id = id;
+            Model = model;
+            Brand = brand;
             PricePerDay = pricePerDay;
-            IsAvailable = isAvailable;
-        }
-
-        public override string ToString()
-        {
-            return $"Model: {Model}, Brand: {Brand}, Year: {Year}, PricePerDay: {PricePerDay}, IsAvailable: {IsAvailable}";
+            IsAvailable = true; // By default, a car is available
         }
     }
-  
+
 }

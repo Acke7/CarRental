@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace CarRental
 {
-    internal class Customer
+    public class Customer
     {
         public string Name { get; set; }
         public string ContactInfo { get; set; }
-        public List<Rental> RentalHistory { get; set; }
+
+        public Customer(string name, string contactInfo)
+        {
+            Name = name;
+            ContactInfo = contactInfo;
+        }
     }
 }
